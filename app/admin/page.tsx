@@ -55,7 +55,7 @@ export default async function Dashboard() {
 
     <DashboardLayout>
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold">Welcome, {session.user.name}</h2>
+        {/* <h2 className="text-2xl font-bold">Welcome, {session.user.name}</h2> */}
         <h2 className="text-2xl font-bold">Welcome, {"Admin"}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
