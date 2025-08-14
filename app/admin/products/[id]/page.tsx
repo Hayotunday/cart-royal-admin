@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { getProductById } from "@/lib/api";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -18,10 +20,9 @@ interface ProductDetailsPageProps {
   };
 }
 
-export default async function ProductDetailsPage({
-  params,
-}: ProductDetailsPageProps) {
-  const product = await getProductById(params.id);
+export default async function ProductDetailsPage() {
+  const { id } = useParams();
+  const product = await getProductById(id as string);
 
   if (!product) {
     notFound();
